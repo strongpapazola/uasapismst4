@@ -71,7 +71,7 @@ Body :
 }
 ```
 
-## Update Data
+## Delete Data
 
 Use this endpoint for fetch all data
 
