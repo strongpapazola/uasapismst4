@@ -7,7 +7,7 @@ try:
     app = Flask(__name__)
 
     mydb = mysql.connector.connect(
-        host="localhost",
+        host="172.17.0.1",
         user="root",
         passwd="@1Nfr4struktur",
         database="uasapi"
@@ -41,6 +41,7 @@ def gethandphone():
         # mydb.commit()
         return jsonify({"data":result, "code": 200}), 200
     except Exception as e:
+        exit()
         return jsonify({"data":str(e), "code": 500}), 500
 
 @app.route("/handphone/<int:id>", methods=['GET'])
@@ -58,6 +59,7 @@ def gethandphonebyid(id):
             }
         return jsonify({"data":result, "code": 200}), 200
     except Exception as e:
+        exit()
         return jsonify({"data":str(e), "code": 500}), 500
 
 @app.route("/handphone", methods=['POST'])
@@ -70,6 +72,7 @@ def inserthandphone():
         mydb.commit()
         return jsonify({"data":"1 Record Inserted!", "code": 200}), 200
     except Exception as e:
+        exit()
         return jsonify({"data":str(e), "code": 500}), 500
 
 @app.route("/handphone/<int:id>", methods=['PUT'])
@@ -82,6 +85,7 @@ def updatehandphonebyid(id):
         mydb.commit()
         return jsonify({"data":"1 Record Affected!", "code": 200}), 200
     except Exception as e:
+        exit()
         return jsonify({"data":str(e), "code": 500}), 500
 
 @app.route("/handphone/<int:id>", methods=['DELETE'])
@@ -90,6 +94,7 @@ def deletehandphonebyid(id):
         cursor.execute("DELETE FROM handphone WHERE id = %s" % (id,))
         return jsonify({"data":"1 Record Deleted!", "code": 200}), 200
     except Exception as e:
+        exit()
         return jsonify({"data":str(e), "code": 500}), 500
 
 if "__main__" == __name__:
