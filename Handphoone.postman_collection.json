@@ -1,0 +1,147 @@
+{
+	"info": {
+		"_postman_id": "c50a479f-8b8a-4153-ab60-763ca24cc50f",
+		"name": "Handphoone",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "12314938"
+	},
+	"item": [
+		{
+			"name": "Insert Data Handphone",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "JWT",
+						"value": "{{token}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"nama\": \"Samsung\",\r\n    \"jenis\": \"Young 2014\",\r\n    \"nomor\": 9\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/handphone",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"handphone"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update Data Handphone",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "JWT",
+						"value": "{{token}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"jenis\": \"J2 2016\",\r\n    \"nama\": \"Samsung\",\r\n    \"nomor\": 1\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/handphone/10",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"handphone",
+						"10"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Data Handphone",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "JWT",
+						"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJkYXRhIjoiYWRtaW4tMTI3LjAuMC4xIiwiZXhwIjoxNjQ5NDcxNTMwfQ.IjY5r4igZ156LG1n3OARbrOC4Wv6V9hL7C1hW-TFbu",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"url": {
+					"raw": "{{url}}/handphone",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"handphone"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Data Handphone By ID",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "JWT",
+						"value": "{{token}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{url}}/handphone/10",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"handphone",
+						"10"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Data Handphone By ID",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "JWT",
+						"value": "{{token}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{url}}/handphone/10",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"handphone",
+						"10"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
